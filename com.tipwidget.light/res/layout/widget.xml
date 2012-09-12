@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp" >
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amount_text"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/etv_amount"
+            android:layout_width="60dp"
+            android:layout_height="30dp"                      
+       		android:clickable="true"
+            android:text="@string/amount_value"
+            android:gravity="center"               
+            android:background="#ffffff"
+            android:textSize="14sp"/> 
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tip_text"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/etv_tip"
+            android:layout_width="35dp"
+            android:layout_height="30dp"                  
+       		android:clickable="true"
+            android:text="@string/tip_value"
+            android:gravity="center"   
+            android:background="#ffffff"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/tv_split"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/split_text"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/etv_split"
+            android:layout_width="30dp"
+            android:layout_height="30dp" 
+            android:gravity="center"                   
+       		android:clickable="true"
+            android:background="#ffffff"       		
+            android:text="@string/split_value"
+            android:textSize="14sp"/>                      
+                   
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/horizontalline"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+  
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center_horizontal|left"
+        android:orientation="horizontal" >
+
+        		    <LinearLayout
+		        android:layout_width="wrap_content"
+		        android:layout_height="fill_parent"
+		        android:gravity="center_horizontal|left"
+		        android:orientation="vertical" >
+		        
+		        <TextView
+		            android:id="@+id/tv_tip_total"
+		            android:layout_width="wrap_content"
+		            android:layout_height="20dp"
+		            android:text="@string/total_tip_text"
+		            android:textSize="14sp"
+		            android:paddingLeft="3dp"
+		            android:paddingRight="3dp" />
+		        <TextView
+		            android:id="@+id/tv_total_tip_split"
+		            android:layout_width="wrap_content" 
+		            android:layout_height="20dp"                      
+		            android:text="@string/total_tip_split_text"             
+		            android:textSize="14sp"
+		            android:paddingLeft="3dp"
+		            android:paddingRight="3dp" /> 
+			</LinearLayout>	     
+
+		    <LinearLayout
+		        android:layout_width="wrap_content"
+		        android:layout_height="fill_parent"
+		        android:gravity="center_horizontal|left"
+		        android:orientation="vertical" >
+		        
+		        <TextView
+		            android:id="@+id/etv_tip_total"
+		            android:layout_width="60dp"
+		            android:layout_height="20dp"
+		            android:text="@string/total_tip_value"
+		            android:textSize="14sp"
+		            android:paddingLeft="3dp"
+		            android:paddingRight="3dp" />
+		        <TextView
+		            android:id="@+id/etv_total_tip_split"
+		            android:layout_width="60dp" 
+		            android:layout_height="20dp"                      
+		            android:text="@string/total_tip_split_value"             
+		            android:textSize="14sp"
+		            android:paddingLeft="3dp"
+		            android:paddingRight="3dp" /> 
+			</LinearLayout>		
+        
+		    <LinearLayout
+		        android:layout_width="wrap_content"
+		        android:layout_height="fill_parent"
+		        android:gravity="center_horizontal|left"
+		        android:orientation="vertical" >
+		        
+		        <TextView
+		            android:id="@+id/tv_total"
+		            android:layout_width="wrap_content"
+		            android:layout_height="20dp"
+		            android:text="@string/total_text"
+		            android:textSize="14sp"
+		            android:paddingLeft="3dp"
+		            android:paddingRight="3dp" />
+		        <TextView
+		            android:id="@+id/tv_total_split"
+		            android:layout_width="wrap_content" 
+		            android:layout_height="20dp"                      
+		            android:text="@string/total_split_text"             
+		            android:textSize="14sp"
+		            android:paddingLeft="3dp"
+		            android:paddingRight="3dp" /> 
+			</LinearLayout>	     
+
+		    <LinearLayout
+		        android:layout_width="wrap_content"
+		        android:layout_height="fill_parent"
+		        android:gravity="center_horizontal|left"
+		        android:orientation="vertical" >
+		        
+		        <TextView
+		            android:id="@+id/etv_total"
+		            android:layout_width="60dp"
+		            android:layout_height="20dp"
+		            android:text="@string/total_value"
+		            android:textSize="14sp"
+		            android:paddingLeft="3dp"
+		            android:paddingRight="3dp" />
+		        <TextView
+		            android:id="@+id/etv_total_split"
+		            android:layout_width="60dp" 
+		            android:layout_height="20dp"                      
+		            android:text="@string/total_split_value"             
+		            android:textSize="14sp"
+		            android:paddingLeft="3dp"
+		            android:paddingRight="3dp" /> 
+			</LinearLayout>	
+
+		    				    			
+	</LinearLayout>
+<!--
+        <LinearLayout
+            android:id="@+id/widgetStoreLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textColor="#ffffff"
+                    android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/priceType"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="top|left"
+                    android:paddingLeft="15dp"
+                    android:text=""
+                    android:textColor="#999"
+                    android:textSize="13dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/nextFav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icn_widget_next" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+        
+        <ProgressBar android:id="@+id/progress"
+            android:layout_width="22dp"
+            android:layout_height="22dp"              
+            android:indeterminate="false"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            />
+
+        <Button
+            android:id="@+id/refresh"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_margin="5dp"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/refresh1"
+            
+            />
+
+        <TextView
+            android:id="@+id/updated"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="10sp" />
+    </LinearLayout>
+-->
+
+</LinearLayout>
