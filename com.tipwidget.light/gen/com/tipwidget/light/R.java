@@ -20,6 +20,8 @@ public final class R {
         public static final int background2=0x7f020001;
         public static final int ic_launcher=0x7f020002;
         public static final int item=0x7f020003;
+        public static final int logo=0x7f020004;
+        public static final int logo_small=0x7f020005;
     }
     public static final class id {
         public static final int Corners=0x7f08002c;

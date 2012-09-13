@@ -66,8 +66,11 @@ public class CalculatorActivity extends Activity {
 				Clear();
 				results.setText("0");
 			}
-			
-			results.setText(ChangeSign(results.getText().toString()));
+			String temp = ChangeSign(results.getText().toString());
+			if (temp.length() > 11){
+				temp = "Overflow";
+			}
+			results.setText(temp);
 		}
 		});
 	clear.setOnClickListener(new OnClickListener() {
@@ -96,6 +99,9 @@ public class CalculatorActivity extends Activity {
 		});
 	plus.setOnClickListener(new OnClickListener() {
 		public void onClick(View v) {
+			if (equal_clicked == true){
+				Clear();
+			}
 			if (plus_clicked == true){
 				if (r1==""){
 					r1 = results.getText().toString();
@@ -130,6 +136,9 @@ public class CalculatorActivity extends Activity {
 		});
 	minus.setOnClickListener(new OnClickListener() {
 		public void onClick(View v) {
+			if (equal_clicked == true){
+				Clear();
+			}
 			if (minus_clicked == true){
 				if (r1==""){
 					r1 = results.getText().toString();
@@ -164,6 +173,9 @@ public class CalculatorActivity extends Activity {
 		});
 	divide.setOnClickListener(new OnClickListener() {
 		public void onClick(View v) {
+			if (equal_clicked == true){
+				Clear();
+			}
 			if (divide_clicked == true){
 				if (r1==""){
 					r1 = results.getText().toString();
@@ -198,6 +210,9 @@ public class CalculatorActivity extends Activity {
 		});
 	multiply.setOnClickListener(new OnClickListener() {
 		public void onClick(View v) {
+			if (equal_clicked == true){
+				Clear();
+			}
 			if (multiply_clicked == true){
 				if (r1==""){
 					r1 = results.getText().toString();
@@ -252,8 +267,12 @@ public class CalculatorActivity extends Activity {
 				results.setText("0");
 			}
 			if (!results.getText().toString().contains(".")){
-			
-			results.setText(results.getText().toString() + ".");
+				String temp = results.getText().toString() + ".";
+				if (temp.length() > 11){
+					temp = results.getText().toString();
+				}
+				results.setText(temp);
+			results.setText(temp);
 			
 			}
 		}

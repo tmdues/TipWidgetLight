@@ -8,7 +8,7 @@
         android:targetSdkVersion="16" />
 
     <application
-        android:icon="@drawable/item"
+        android:icon="@drawable/logo_small"
         android:label="Tip Widget Light"
         android:theme="@style/AppTheme" >
     	<activity
