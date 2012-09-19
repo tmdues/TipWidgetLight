@@ -33,28 +33,28 @@ public class TipWidgetProvider extends AppWidgetProvider {
 	public void onEnabled(Context context) {
 		// TODO Auto-generated method stub
 		super.onEnabled(context);
-		Log.e("Speedway","Widget onEnabled");
+		Log.e("LightWidget","Widget onEnabled");
 	}
 	
 	@Override
 	public void onDeleted(Context context, int[] appWidgetIds) {
 		// TODO Auto-generated method stub
 		super.onDeleted(context, appWidgetIds);
-		Log.e("Speedway","Widget onDeleted");
+		Log.e("LightWidget","Widget onDeleted");
 	}
 	
 	@Override
 	public void onDisabled(Context context) {
 		// TODO Auto-generated method stub
 		super.onDisabled(context);
-		Log.e("Speedway","Widget onDisabled");
+		Log.e("LightWidget","Widget onDisabled");
 	}
 	
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
 		super.onReceive(context, intent);
-		Log.e("SampleWidget","Widget onReceive");
+		Log.e("LightWidget","Widget onReceive");
 		//Amount Action
 		if (intent.getAction().equals(UPDATE_AMOUNT_WIDGET)) {
 			String amount = "null";
@@ -164,7 +164,7 @@ public class TipWidgetProvider extends AppWidgetProvider {
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,int[] appWidgetIds) {
 		// TODO Auto-generated method stub
 		super.onUpdate(context, appWidgetManager, appWidgetIds);
-		Log.e("SampleWidget","Widget onUpdate");
+		Log.e("LightWidget","Widget onUpdate");
 		RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
 		//Update tip
 		remoteViews.setTextViewText(R.id.etv_tip, tip_string);

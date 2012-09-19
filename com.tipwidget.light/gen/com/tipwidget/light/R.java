@@ -18,13 +18,11 @@ public final class R {
     public static final class drawable {
         public static final int background=0x7f020000;
         public static final int background2=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int item=0x7f020003;
-        public static final int logo=0x7f020004;
-        public static final int logo_small=0x7f020005;
+        public static final int logo=0x7f020002;
+        public static final int logo_small=0x7f020003;
     }
     public static final class id {
-        public static final int Corners=0x7f08002c;
+        public static final int Corners=0x7f08002d;
         public static final int btn_0=0x7f080014;
         public static final int btn_1=0x7f08000f;
         public static final int btn_2=0x7f080010;
@@ -53,11 +51,11 @@ public final class R {
         public static final int etv_amount=0x7f08001e;
         public static final int etv_split=0x7f080022;
         public static final int etv_tip=0x7f080020;
-        public static final int etv_tip_total=0x7f080026;
-        public static final int etv_total=0x7f08002a;
-        public static final int etv_total_split=0x7f08002b;
-        public static final int etv_total_tip_split=0x7f080027;
-        public static final int horizontalline=0x7f080023;
+        public static final int etv_tip_total=0x7f080025;
+        public static final int etv_total=0x7f080027;
+        public static final int etv_total_split=0x7f08002c;
+        public static final int etv_total_tip_split=0x7f08002a;
+        public static final int horizontalline=0x7f080028;
         public static final int results=0x7f080002;
         public static final int rootLayout=0x7f080000;
         public static final int tv_amount=0x7f08001d;
@@ -66,9 +64,10 @@ public final class R {
         public static final int tv_split=0x7f080021;
         public static final int tv_tip=0x7f08001f;
         public static final int tv_tip_total=0x7f080024;
-        public static final int tv_total=0x7f080028;
-        public static final int tv_total_split=0x7f080029;
-        public static final int tv_total_tip_split=0x7f080025;
+        public static final int tv_total=0x7f080026;
+        public static final int tv_total_split=0x7f08002b;
+        public static final int tv_total_tip_split=0x7f080029;
+        public static final int verticalline=0x7f080023;
     }
     public static final class layout {
         public static final int calculatoractivity=0x7f030000;
