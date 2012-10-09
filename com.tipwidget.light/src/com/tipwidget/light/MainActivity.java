@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 	public void CalculatorActivity() {
 
 		if (getIntent().getAction().equals(
-				TipWidgetProvider.AMOUNT_WIDGET_RECEIVER)) {
+				LightTipWidgetProvider.AMOUNT_WIDGET_RECEIVER)) {
 			Intent i = new Intent(this, CalculatorActivity.class);
 			startActivity(i);
 			finish();
@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
 	public void TipActivity() {
 
 		if (getIntent().getAction().equals(
-				TipWidgetProvider.TIP_WIDGET_RECEIVER)) {
+				LightTipWidgetProvider.TIP_WIDGET_RECEIVER)) {
 			Intent i = new Intent(this, TipActivity.class);
 			startActivity(i);
 			finish();
@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
 	public void SplitActivity() {
 
 		if (getIntent().getAction().equals(
-				TipWidgetProvider.SPLIT_WIDGET_RECEIVER)) {
+				LightTipWidgetProvider.SPLIT_WIDGET_RECEIVER)) {
 			Intent i = new Intent(this, SplitActivity.class);
 			startActivity(i);
 			finish();

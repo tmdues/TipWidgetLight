@@ -51,10 +51,10 @@ public class CalculatorActivity extends Activity {
 		Button equal = (Button) findViewById(R.id.btn_equal);
 		Button close = (Button) findViewById(R.id.btn_close);
 		Button update = (Button) findViewById(R.id.btn_update);
-		String current = TipWidgetProvider.amount_string.substring(1,
-				TipWidgetProvider.amount_string.length());
+		String current = LightTipWidgetProvider.amount_string.substring(1,
+				LightTipWidgetProvider.amount_string.length());
 		onStart = true;
-		if (TipWidgetProvider.amount_string == "$0.00") {
+		if (LightTipWidgetProvider.amount_string == "$0.00") {
 			results.setText("0");
 		} else {
 			results.setText(current);
@@ -397,8 +397,8 @@ public class CalculatorActivity extends Activity {
 					results.setText("0");
 				}
 				Intent i = new Intent(CalculatorActivity.this,
-						TipWidgetProvider.class);
-				i.setAction(TipWidgetProvider.UPDATE_AMOUNT_WIDGET);
+						LightTipWidgetProvider.class);
+				i.setAction(LightTipWidgetProvider.UPDATE_AMOUNT_WIDGET);
 				i.putExtra(
 						"amount",
 						"$"
@@ -532,8 +532,8 @@ public class CalculatorActivity extends Activity {
 
 			if (results == "0") {
 				results = num;
-			} else if (results == TipWidgetProvider.amount_string.substring(1,
-					TipWidgetProvider.amount_string.length())) {
+			} else if (results == LightTipWidgetProvider.amount_string.substring(1,
+					LightTipWidgetProvider.amount_string.length())) {
 				results = num;
 			} else {
 				results = results + num;
@@ -578,7 +578,9 @@ public class CalculatorActivity extends Activity {
 		}
 		if (d == 2) {
 			DecimalFormat dec = new DecimalFormat("#.##");
+			if(result != ""){
 			result = String.valueOf(dec.format(Double.parseDouble(result)));
+			}
 			// if (result.contains(".00") == true){
 			// result = String.format("%.2f", Double.parseDouble(result));
 			// }

@@ -1,13 +1,12 @@
 package com.tipwidget.light;
-
 import com.tipwidget.light.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class TipActivity extends Activity {
@@ -21,11 +20,11 @@ public class TipActivity extends Activity {
 		setContentView(R.layout.tipactivity);
 
 		final TextView current_tip = (TextView) findViewById(R.id.tv_current_tip);
-		Button up = (Button) findViewById(R.id.btn_up);
-		Button down = (Button) findViewById(R.id.btn_down);
+		ImageButton up = (ImageButton) findViewById(R.id.btn_up);
+		ImageButton down = (ImageButton) findViewById(R.id.btn_down);
 		Button cancel = (Button) findViewById(R.id.btn_cancel);
 		Button save = (Button) findViewById(R.id.btn_save);
-		current_tip.setText(TipWidgetProvider.tip_string);
+		current_tip.setText(LightTipWidgetProvider.tip_string);
 		cStringTip = current_tip.getText().toString();
 		up.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -56,8 +55,8 @@ public class TipActivity extends Activity {
 		});
 		save.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent i = new Intent(TipActivity.this, TipWidgetProvider.class);
-				i.setAction(TipWidgetProvider.UPDATE_TIP_WIDGET);
+				Intent i = new Intent(TipActivity.this, LightTipWidgetProvider.class);
+				i.setAction(LightTipWidgetProvider.UPDATE_TIP_WIDGET);
 				i.putExtra("new_tip", cStringTip);
 				sendBroadcast(i);
 				finish();

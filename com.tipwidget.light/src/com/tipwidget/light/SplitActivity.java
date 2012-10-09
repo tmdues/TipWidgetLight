@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class SplitActivity extends Activity {
@@ -22,11 +23,11 @@ public class SplitActivity extends Activity {
 		setContentView(R.layout.splitactivity);
 
 		final TextView current_split = (TextView) findViewById(R.id.tv_current_split);
-		Button up = (Button) findViewById(R.id.btn_up);
-		Button down = (Button) findViewById(R.id.btn_down);
+		ImageButton up = (ImageButton) findViewById(R.id.btn_up);
+		ImageButton down = (ImageButton) findViewById(R.id.btn_down);
 		Button cancel = (Button) findViewById(R.id.btn_cancel);
 		Button save = (Button) findViewById(R.id.btn_save);
-		current_split.setText(TipWidgetProvider.split_string);
+		current_split.setText(LightTipWidgetProvider.split_string);
 		cStringSplit = current_split.getText().toString();
 		up.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -57,8 +58,8 @@ public class SplitActivity extends Activity {
 			public void onClick(View v) {
 				Log.e("MainSplit", cStringSplit);
 				Intent i = new Intent(SplitActivity.this,
-						TipWidgetProvider.class);
-				i.setAction(TipWidgetProvider.UPDATE_SPLIT_WIDGET);
+						LightTipWidgetProvider.class);
+				i.setAction(LightTipWidgetProvider.UPDATE_SPLIT_WIDGET);
 				i.putExtra("new_split", cStringSplit);
 				sendBroadcast(i);
 				finish();
