@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Lite Tip Widget Calculator</string>
+    <string name="app_name">Tip Calculator Widgets - Free</string>
     <string name="amount_text">Amount:</string>
     <string name="tip_text">Tip:</string>
     <string name="split_text">Split:</string>

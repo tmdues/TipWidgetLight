@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CalculatorActivity extends Activity {
 	String r1 = "";
@@ -249,7 +250,7 @@ public class CalculatorActivity extends Activity {
 						results.setText(results.getText().toString() + "0");
 					}
 				} else {
-					results.setText(results.getText().toString() + "0");
+					results.setText(numberClick(results.getText().toString(),"0"));
 				}
 			}
 		});
@@ -259,16 +260,35 @@ public class CalculatorActivity extends Activity {
 					onStart = false;
 					Clear();
 					results.setText("0");
+				}		
+				if (equal_clicked == true) {
+					Clear();
 				}
-				if (!results.getText().toString().contains(".")) {
-					String temp = results.getText().toString() + ".";
-					if (temp.length() > 11) {
-						temp = results.getText().toString();
-					}
-					results.setText(temp);
-					results.setText(temp);
+				if (plus_clicked == false & minus_clicked == false
+						& divide_clicked == false & multiply_clicked == false) {
+						if (!results.getText().toString().contains(".")) {
+							String temp = results.getText().toString() + ".";
+							if (temp.length() > 11) {
+								temp = results.getText().toString();
+							}
+							results.setText(temp);
+						}
+				} else if (first_pass == true) {
+							first_pass = false;
+								results.setText("0.");
+				} else {
+					if (!results.getText().toString().contains(".")) {
+						String temp = results.getText().toString() + ".";
+						if (temp.length() > 11) {
+							temp = results.getText().toString();
+						}
+						results.setText(temp);
+					}			
+						}
+					
+				
+				
 
-				}
 			}
 		});
 		one.setOnClickListener(new OnClickListener() {
@@ -396,6 +416,7 @@ public class CalculatorActivity extends Activity {
 				if (results.getText().toString() == "Overflow") {
 					results.setText("0");
 				}
+				if (Double.valueOf(results.getText().toString()) >= 0){
 				Intent i = new Intent(CalculatorActivity.this,
 						LightTipWidgetProvider.class);
 				i.setAction(LightTipWidgetProvider.UPDATE_AMOUNT_WIDGET);
@@ -408,6 +429,9 @@ public class CalculatorActivity extends Activity {
 				// Log.e("t",String.valueOf(Double.parseDouble(formatResult(results.getText().toString(),2))));
 				sendBroadcast(i);
 				finish();
+				} else {
+					Toast.makeText(LightApp.appContext, "The tip can't be calculated with a negative number, please enter a valid number and try again.", Toast.LENGTH_SHORT).show();
+				}
 			}
 		});
 		equal.setOnClickListener(new OnClickListener() {

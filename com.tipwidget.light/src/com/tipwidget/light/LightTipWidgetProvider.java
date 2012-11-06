@@ -11,7 +11,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
 public class LightTipWidgetProvider extends AppWidgetProvider {
 
@@ -34,28 +33,24 @@ public class LightTipWidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onEnabled(Context context) {
 		// TODO Auto-generated method stub
-		super.onEnabled(context);
-		Log.e("LightWidget","Widget onEnabled");
+		updateWidget(context);
 	}
 	
 	@Override
 	public void onDeleted(Context context, int[] appWidgetIds) {
 		// TODO Auto-generated method stub
-		super.onDeleted(context, appWidgetIds);
-		Log.e("LightWidget","Widget onDeleted");
+		updateWidget(context);
 	}
 	
 	@Override
 	public void onDisabled(Context context) {
 		// TODO Auto-generated method stub
-		super.onDisabled(context);
-		Log.e("LightWidget","Widget onDisabled");
+		updateWidget(context);
 	}
 	
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
-		super.onReceive(context, intent);
 		Log.e("LightWidget","Widget onReceive");
 		//Amount Action
 		if (intent.getAction().equals(UPDATE_AMOUNT_WIDGET)) {
@@ -79,7 +74,7 @@ public class LightTipWidgetProvider extends AppWidgetProvider {
 	        views.setTextViewText(R.id.etv_total_tip_split, totalTip_split_string);
 			ComponentName widget = new ComponentName(context, LightTipWidgetProvider.class);
 	        AppWidgetManager.getInstance(context).updateAppWidget(widget, views);
-			Toast.makeText(context, amount, Toast.LENGTH_SHORT).show();
+			
 		}
 		//Tip Action
 		else if (intent.getAction().equals(UPDATE_TIP_WIDGET)) {
@@ -98,7 +93,7 @@ public class LightTipWidgetProvider extends AppWidgetProvider {
 	        views.setTextViewText(R.id.etv_total_tip_split, totalTip_split_string);
 			ComponentName widget = new ComponentName(context, LightTipWidgetProvider.class);
 	        AppWidgetManager.getInstance(context).updateAppWidget(widget, views);
-			Toast.makeText(context, new_tip, Toast.LENGTH_SHORT).show();
+		
 		}			
 		//Split Action
 		else if (intent.getAction().equals(UPDATE_SPLIT_WIDGET)) {
@@ -117,11 +112,12 @@ public class LightTipWidgetProvider extends AppWidgetProvider {
 	        views.setTextViewText(R.id.etv_total_tip_split, totalTip_split_string);
 			ComponentName widget = new ComponentName(context, LightTipWidgetProvider.class);
 	        AppWidgetManager.getInstance(context).updateAppWidget(widget, views);
-			Toast.makeText(context, new_split, Toast.LENGTH_SHORT).show();
+		
 		}
 		 else {
-             super.onReceive(context, intent);
+			 updateWidget(context);
          }
+		updateWidget(context);
 	}
 	private void CalculateTotals(){
 		
@@ -178,43 +174,52 @@ public class LightTipWidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,int[] appWidgetIds) {
 		// TODO Auto-generated method stub
-		super.onUpdate(context, appWidgetManager, appWidgetIds);
-		Log.e("LightWidget","Widget onUpdate");
-		//Update tip
-		views.setTextViewText(R.id.etv_tip, tip_string);
-		//Update split
-		views.setTextViewText(R.id.etv_split, split_string);
-		//Update amount
-		views.setTextViewText(R.id.etv_amount, amount_string);
-		//Update total
-		views.setTextViewText(R.id.etv_total, total_string);
-		//Update total split
-		views.setTextViewText(R.id.etv_total_split, total_split_string);
-		//Update tip total
-		views.setTextViewText(R.id.etv_tip_total, totalTip_string); 
-		//Update total tip split
-		views.setTextViewText(R.id.etv_total_tip_split, totalTip_split_string);		
-		
 
-		//Set Amount OnClickPendingIntent
-		Intent amount = new Intent(context, MainActivity.class);
-		amount.setAction(AMOUNT_WIDGET_RECEIVER);
-		amount.putExtra("msg", "Message for Amount Click");
-		PendingIntent amountPendingIntent = PendingIntent.getActivity(context, 0, amount, 0);
-		views.setOnClickPendingIntent(R.id.etv_amount, amountPendingIntent);
-		//Set Tip OnClickPendingIntent
-		Intent tip = new Intent(context, MainActivity.class);
-		tip.setAction(TIP_WIDGET_RECEIVER);
-		PendingIntent tipPendingIntent = PendingIntent.getActivity(context, 0, tip, 0);
-		views.setOnClickPendingIntent(R.id.etv_tip, tipPendingIntent);
-		//Set Split OnClickPendingIntent
-		Intent split = new Intent(context, MainActivity.class);
-		split.setAction(SPLIT_WIDGET_RECEIVER);
-		PendingIntent splitPendingIntent = PendingIntent.getActivity(context, 0, split, 0);
-		views.setOnClickPendingIntent(R.id.etv_split, splitPendingIntent);
-		//Set AppWidgetManager
-		appWidgetManager.updateAppWidget(appWidgetIds, views);   
+		updateWidget(context);
 
+		}
 		
-	}	
+		void updateWidget(Context context) {
+		    RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.light_widget);
+
+			Log.e("LightWidget","Widget onUpdate");
+			//Update tip
+			views.setTextViewText(R.id.etv_tip, tip_string);
+			//Update split
+			views.setTextViewText(R.id.etv_split, split_string);
+			//Update amount
+			views.setTextViewText(R.id.etv_amount, amount_string);
+			//Update total
+			views.setTextViewText(R.id.etv_total, total_string);
+			//Update total split
+			views.setTextViewText(R.id.etv_total_split, total_split_string);
+			//Update tip total
+			views.setTextViewText(R.id.etv_tip_total, totalTip_string); 
+			//Update total tip split
+			views.setTextViewText(R.id.etv_total_tip_split, totalTip_split_string);		
+			
+
+			//Set Amount OnClickPendingIntent
+			Intent amount = new Intent(context, MainActivity.class);
+			amount.setAction(AMOUNT_WIDGET_RECEIVER);
+			amount.putExtra("msg", "Message for Amount Click");
+			PendingIntent amountPendingIntent = PendingIntent.getActivity(context, 0, amount, 0);
+			views.setOnClickPendingIntent(R.id.etv_amount, amountPendingIntent);
+			//Set Tip OnClickPendingIntent
+			Intent tip = new Intent(context, MainActivity.class);
+			tip.setAction(TIP_WIDGET_RECEIVER);
+			PendingIntent tipPendingIntent = PendingIntent.getActivity(context, 0, tip, 0);
+			views.setOnClickPendingIntent(R.id.etv_tip, tipPendingIntent);
+			//Set Split OnClickPendingIntent
+			Intent split = new Intent(context, MainActivity.class);
+			split.setAction(SPLIT_WIDGET_RECEIVER);
+			PendingIntent splitPendingIntent = PendingIntent.getActivity(context, 0, split, 0);
+			views.setOnClickPendingIntent(R.id.etv_split, splitPendingIntent);
+			//Set AppWidgetManager
+			
+		    AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+		    ComponentName thisWidget = new ComponentName(context, LightTipWidgetProvider.class);
+		    appWidgetManager.updateAppWidget(thisWidget, views);
+
+		}
 }
