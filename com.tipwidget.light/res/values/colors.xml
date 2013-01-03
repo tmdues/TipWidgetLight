@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<color name="transparentText">#FFFFFF</color>
+<color name="moneyGreenText">#CDC0B0</color>
+<color name="lightPinkText">#5C3243</color>
+<color name="transparentLine">#FFAfAfAf</color>
+<color name="moneyGreenLine">#A4BD99</color>
+<color name="lightPinkLine">#BF84BF</color>
+</resources>

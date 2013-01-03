@@ -3,9 +3,6 @@
 	android:minWidth="250dp"    	
 	android:minHeight="55dp"    
 	android:updatePeriodMillis="86400000"    	    
-	android:initialLayout="@layout/light_widget"
-	android:previewImage="@drawable/logo" 	
-	android:resizeMode="horizontal|vertical"
-	android:widgetCategory="keyguard|home_screen"
+	android:initialLayout="@layout/light_widget"    	
 	>
 </appwidget-provider>
