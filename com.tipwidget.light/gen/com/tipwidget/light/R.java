@@ -30,7 +30,6 @@ public final class R {
         public static final int logo_small=0x7f020003;
         public static final int sort_down=0x7f020004;
         public static final int sort_up=0x7f020005;
-        public static final int widget_info=0x7f020006;
     }
     public static final class id {
         public static final int Corners=0x7f09002f;
